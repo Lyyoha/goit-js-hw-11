@@ -19,7 +19,11 @@ refs.searchForm.addEventListener('submit', e => {
   const query = e.target.elements['search-text'].value.trim();
 
   if (!query) {
-    return alert('Fill the search field');
+    iziToast.warning({
+      message: 'Fill the search field',
+      position: 'topRight',
+    });
+    return;
   }
 
   clearGallery();
